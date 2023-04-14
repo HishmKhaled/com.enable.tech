@@ -15,6 +15,7 @@ public class CheckoutProcessTests extends BaseTest {
     //method
     private void login(String username, String password){
         LoginPage loginPage = new LoginPage(getDriver());
+        
 
         loginPage.enterUsername(username);
         loginPage.enterPassword(password);
