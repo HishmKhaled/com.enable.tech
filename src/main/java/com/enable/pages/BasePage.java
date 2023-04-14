@@ -26,8 +26,5 @@ public class BasePage {
         return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
     }
 
-    /*public String getYourPagetTitle(){
-        return findElement(pageTitle).getText();
-    }*/
 
 }
