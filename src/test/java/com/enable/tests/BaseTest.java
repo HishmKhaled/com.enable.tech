@@ -23,18 +23,11 @@ public class BaseTest {
         driver.set(chromeDriver);
 
         chromeDriver.navigate().to("https://www.saucedemo.com/");
-
     }
 
    public WebDriver getDriver(){
        return driver.get();
    }
-
-
-
-
-
-
 
    @AfterMethod
     public void closeBrowser(){

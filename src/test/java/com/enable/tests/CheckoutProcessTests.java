@@ -17,8 +17,8 @@ public class CheckoutProcessTests extends BaseTest {
 
     //method
     protected synchronized void loginMethod(WebDriver driver){
-        LoginPage loginPage = new LoginPage(driver);
 
+        LoginPage loginPage = new LoginPage(driver);
         loginPage.enterUsername(valid_UserName);
         loginPage.enterPassword(valid_Password);
         loginPage.clickOnLogin();
@@ -26,10 +26,8 @@ public class CheckoutProcessTests extends BaseTest {
 
     @Test(description = "Verify that the user is on the cart page after adding an item to the cart" )
     public synchronized void addItemToCart(){
+
         loginMethod(getDriver());
-
-
-
 
         inventoryPage = new InventoryPage(getDriver());
         inventoryPage.clickOnAddToCartButton();
@@ -41,7 +39,6 @@ public class CheckoutProcessTests extends BaseTest {
 
     @Test(description = "Verify that the user can’t proceed to checkout Overview without filling out the form")
     public synchronized void errorMessageDisplayedWhenFormhasEmptyFields(){
-
 
         loginMethod(getDriver());
 
@@ -60,8 +57,8 @@ public class CheckoutProcessTests extends BaseTest {
 
     @Test(description = "Verify that the user can verify the order details on the checkout overview page")
     public synchronized void orderDetails(){
-        loginMethod(getDriver());
 
+        loginMethod(getDriver());
 
         inventoryPage = new InventoryPage(getDriver());
         inventoryPage.clickOnAddToCartButton();
@@ -99,9 +96,7 @@ public class CheckoutProcessTests extends BaseTest {
     @Test(description = "Verify that the user can fill out the checkout information form")
     public synchronized void fillCheckoutForm(){
 
-
         loginMethod(getDriver());
-
 
         inventoryPage = new InventoryPage(getDriver());
         inventoryPage.clickOnAddToCartButton();
@@ -123,7 +118,6 @@ public class CheckoutProcessTests extends BaseTest {
 
     @Test(description = "Verify that the user can complete the order on the checkout overview page")
     public synchronized void completeTheOrder(){
-
 
         loginMethod(getDriver());
 
