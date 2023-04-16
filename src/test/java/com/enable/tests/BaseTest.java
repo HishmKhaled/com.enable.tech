@@ -5,25 +5,30 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 
 import static org.testng.Assert.assertEquals;
 
 public class BaseTest {
     //variables
-   public static WebDriver driver ;
+  private static ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
 
+   public static String valid_UserName = "standard_user";
+    public static String valid_Password = "secret_sauce";
 
-   @BeforeMethod
-    public void setup(){
+    @BeforeMethod
+   public void setup(){
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        WebDriver chromeDriver = new ChromeDriver();
+        driver.set(chromeDriver);
 
-        driver.navigate().to("https://www.saucedemo.com/");
+        chromeDriver.navigate().to("https://www.saucedemo.com/");
+
     }
 
-    public WebDriver getDriver(){
-       return driver;
-    }
+   public WebDriver getDriver(){
+       return driver.get();
+   }
 
 
 
@@ -31,9 +36,9 @@ public class BaseTest {
 
 
 
-    @AfterMethod
+   @AfterMethod
     public void closeBrowser(){
-       driver.quit();
+       getDriver().quit();
     }
 
 }

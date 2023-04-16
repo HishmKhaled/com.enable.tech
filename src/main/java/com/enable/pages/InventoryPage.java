@@ -19,7 +19,7 @@ public class InventoryPage extends BasePage {
 
 
     //methods
-    public String getHomeTitle(){
+    public String getInventoryTitle(){
         return findElement(homeTitle).getText();
     }
 
