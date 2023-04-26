@@ -1,8 +1,7 @@
-package com.enable.pages;
+package com.sauce.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.edge.AddHasCasting;
 
 public class CartPage extends BasePage{
 

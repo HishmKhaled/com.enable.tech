@@ -1,9 +1,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Parallel Tests Suite" parallel="methods" thread-count="6">
+<suite name="Parallel Tests Suite" parallel="methods" thread-count="1">
     <test name="Test 1">
         <parameter name="browser" value="Chrome"></parameter>
         <classes>
-            <class name="com.enable.tests.CheckoutProcessTests" />
+            <class name="com.sauce.tests.CheckoutProcessTests" />
         </classes>
     </test>
 
